@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CodePro.vn - CyberSoft.edu.vn</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <div class="container-contact100">
+      <div
+        class="contact100-map"
+        id="google_map"
+        data-map-x="40.722047"
+        data-map-y="-73.986422"
+        data-pin="images/icons/map-marker.png"
+        data-scrollwhell="0"
+        data-draggable="1"
+      ></div>
+
+      <div class="contact100-more">
+        <i class="zmdi zmdi-phone-in-talk"></i>
+        (+84) 961.05.10.14
+      </div>
+
+      <div class="wrap-contact100">
+        <div>
+          <img
+            src="images/cybersoft.png"
+            alt="Front End CyberSoft"
+            width="40%"
+          />
+          <span style="padding: 20px"></span>
+          <img src="images/codepro.png" alt="Front End CyberSoft" width="30%" />
+
+          <div style="clear: both"></div>
+          <span class="contact100-form-title"> TÍNH CƯỚC UBER </span>
+          <h2>Vui lòng chọn loại xe:</h2>
+          <ul>
+            <li class="type">
+              <input id="uberX" type="radio" name="selector" checked />
+              <label for="uberX">Uber X</label>
+
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input id="uberSUV" type="radio" name="selector" />
+              <label for="uberSUV">Uber SUV</label>
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input id="uberBlack" type="radio" name="selector" />
+              <label for="uberBlack">Uber Black</label>
+              <div class="check"></div>
+            </li>
+          </ul>
+        </div>
+        <div style="clear: both"></div>
+
+        <form class="contact100-form">
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập vào số KM</h2>
+            <input
+              id="soKM"
+              class="input100"
+              type="number"
+              name="name"
+              placeholder="Số KM ..."
+              text-required="Vui lòng nhập số km đã đi"
+              text-validator="Vui lòng nhập số km lớn hơn bằng 0"
+            />
+            <span class="focus-input100"></span>
+            <span class="text-validator text-danger"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập thời gian chờ &#40;phút&#41;</h2>
+            <input
+              id="thoiGianCho"
+              class="input100"
+              type="number"
+              name="name"
+              placeholder="Thời gian chờ  ..."
+              text-required="Vui lòng nhập số phút chờ Khách hàng"
+              text-validator="Vui lòng nhập số phút lớn hơn bằng 0"
+            />
+            <span class="focus-input100"></span>
+            <span class="text-validator text-danger"></span>
+          </div>
+
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button id="btnTinhTien" type="button" class="contact100-form-btn">
+              TÍNH TIỀN
+            </button>
+          </div>
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button
+              type="button"
+              id="btnInHoaDon"
+              class="contact100-form-btn"
+              data-toggle="modal"
+              data-target="#myModal"
+              disabled
+            >
+              IN HÓA ĐƠN
+            </button>
+          </div>
+        </form>
+
+        <div style="clear: both"></div>
+        <div id="divThanhTien" class="dongia">
+          <h2>
+            Thành tiền:
+            <span id="xuatTien" class="xuatTien"> 12345</span>
+            VNĐ
+          </h2>
+          <h2>
+            Viết thành chữ:
+            <span id="xuatChu"> 12345</span>
+            đồng
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <img class="modal-logo" src="./images/cybersoft.png" alt="" />
+            <div class="modal-title">
+              <h4>Công ty TNHH Uber - CyberSoft</h4>
+              <p>112 Cao Thắng, Quận 3, TPHCM</p>
+              <p>Mã số thuế: 08348193428</p>
+            </div>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <h6 class="text-center">HOÁ ĐƠN TIỀN XE</h6>
+            <p id="date-invoice" class="border-bottom">01/01/2022(Chủ nhật)</p>
+            <p id="range-car"></p>
+            <p>
+              <span>Số KM đã đi</span>
+              <span id="distance"></span>
+              <span id="payment-distance"></span>
+            </p>
+            <p class="border-bottom">
+              <span>Số phút chờ</span>
+              <span id="wait-time"></span>
+              <span id="payment-wait-time"></span>
+            </p>
+            <p>
+              <span>Tổng</span>
+              <span id="sum-payment"></span>
+            </p>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Hủy
+            </button>
+            <button
+              id="btnThanhToan"
+              type="button"
+              class="btn btn-success"
+              data-dismiss="modal"
+            >
+              Thanh toán
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="js/map-custom.js"></script>
+    <!--===============================================================================================-->
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
